@@ -12,12 +12,8 @@ const app = express();
 app.use(express.json());
 
 // CORS configuration
-const corsOptions = {
-  origin: "http://localhost:5173", // Allow your frontend origin
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  optionsSuccessStatus: 204,
-};
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 app.get("/", (request, response) => {
   return response.status(200).send("Welcome To MERN Stack Tutorial");
