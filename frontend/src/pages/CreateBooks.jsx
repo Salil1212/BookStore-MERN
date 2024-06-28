@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 
-const CreateBooks = () => {
+const CreateBooks = (props) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [publishYear, setPublishYear] = useState("");
@@ -37,7 +37,7 @@ const CreateBooks = () => {
   return (
     <div className="p-4">
       <BackButton />
-      <h1 className="my-4 text-3xl">Create Book</h1>
+      <h1 className="my-4 text-3xl ">Create Book</h1>
       {loading ? <Spinner /> : ""}
       <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
@@ -76,4 +76,4 @@ const CreateBooks = () => {
   );
 };
 
-export default CreateBooks;
+export default CreataeBooks;
