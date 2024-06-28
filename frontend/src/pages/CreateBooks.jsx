@@ -21,7 +21,10 @@ const CreateBooks = (props) => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5555/books", data)
+      .post(
+        "https://book-store-mern-backend-4w1k7fhh3-salil1212s-projects.vercel.app/books",
+        data
+      )
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Created successfully", { variant: "success" });
@@ -76,4 +79,4 @@ const CreateBooks = (props) => {
   );
 };
 
-export default CreataeBooks;
+export default CreateBooks;
