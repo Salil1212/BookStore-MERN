@@ -11,13 +11,13 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
-// Middleware for parsing request body
-// Option1 : Allow All Origins with Default of cors(*)
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Allow your frontend origin
-  })
-);
+// CORS configuration
+const corsOptions = {
+  origin: "http://localhost:5173", // Allow your frontend origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
 
 app.get("/", (request, response) => {
   return response.status(200).send("Welcome To MERN Stack Tutorial");
