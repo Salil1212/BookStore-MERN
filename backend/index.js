@@ -65,6 +65,7 @@ app.use(express.json());
 
 // CORS configuration
 const allowedOrigins = [
+  "http://localhost:5173",
   "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app",
   "https://book-store-mern-client-ten.vercel.app",
 ];
