@@ -14,7 +14,11 @@ app.use(express.json());
 // CORS configuration
 
 const corsOptions = {
-  origin: "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app/", // Allow your frontend origin
+  // origin: "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app/", // Allow your frontend origin
+  origin: [
+    "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app/",
+    "https://book-store-mern-client-ten.vercel.app/",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 204,
 };
