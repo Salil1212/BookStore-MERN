@@ -13,14 +13,18 @@ app.use(express.json());
 
 // CORS configuration
 
-
 const corsOptions = {
   origin:
-    "https://book-store-mern-client-mofhtxlgn-salil1212s-projects.vercel.app", // Allow your frontend origin
+    "https://book-store-mern-client-r9ly8zgi3-salil1212s-projects.vercel.app/", // Allow your frontend origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 204,
 };
 app.use(cors(corsOptions));
+
+app.get("/", (request, response) => {
+  return response.status(200).send("Welcome To MERN Stack Tutorial");
+});
+
 app.use("/books", booksRoute);
 
 const port = process.env.PORT || 3000;
