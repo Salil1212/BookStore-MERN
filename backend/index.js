@@ -11,13 +11,7 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
-// app.use(cors());
-const corsOption = {
-  origin: ["https://book-store-mern-client-ten.vercel.app/"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
-app.use(cors(corsOption));
+app.use(cors());
 
 app.get("/", (request, response) => {
   return response.status(200).send("Welcome To MERN Stack Tutorial");
