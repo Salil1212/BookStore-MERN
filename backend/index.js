@@ -64,26 +64,27 @@ const app = express();
 app.use(express.json());
 
 // CORS configuration
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app",
-  "https://book-store-mern-client-ten.vercel.app",
-];
+// const allowedOrigins = [
+//   "http://localhost:5173/",
+//   // "https://book-store-mern-client-dgangbqyz-salil1212s-projects.vercel.app",
+//   // "https://book-store-mern-client-ten.vercel.app",
+// ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    optionsSuccessStatus: 204,
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     optionsSuccessStatus: 204,
+//     credentials: true,
+//   })
+// );
+app.use(cors());
 
 // Manually set CORS headers for all responses (Optional for debugging)
 app.use((req, res, next) => {

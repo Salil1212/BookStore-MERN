@@ -17,9 +17,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        `https://book-store-mern-backend-dhpl0l7ri-salil1212s-projects.vercel.app/books/${id}`
-      )
+      .get(`http://localhost:5555/books/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
@@ -41,10 +39,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(
-        `https://book-store-mern-backend-dhpl0l7ri-salil1212s-projects.vercel.app/books/${id}`,
-        data
-      )
+      .put(`http://localhost:5555/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Edited successfully", { variant: "success" });
