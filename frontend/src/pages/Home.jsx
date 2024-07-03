@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5555/books")
+      .get("https://book-store-mern-backend-beta.vercel.app/books")
       .then((response) => {
         setBooks(response.data.data); // Assuming your data structure has a `data` field
         setLoading(false);
